@@ -1,0 +1,115 @@
+{
+	"info": {
+		"_postman_id": "3ee77c6c-eb4f-4830-bfec-c5c4f51a11c5",
+		"name": "TestSingUP01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SIgnup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Bokshi\",\r\n    \"lastName\" : \"Munna\",\r\n    \"email\"     : \"bokshi01@gmail.com\",\r\n    \"password\"  : \"123456\",\r\n    \"confirmPassword\"  : \"123456\",\r\n    \"dob\"       : {\r\n        \"year\"      : 2013,\r\n        \"month\"     : 12,\r\n        \"day\"       : 31\r\n    },\r\n    \"gender\"    : \"male\",\r\n    \"agree\"     : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{NewURL}}/api/signup",
+					"host": [
+						"{{NewURL}}"
+					],
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"bokshi01@gmail.com\",\r\n    \"password\" : \"1234567\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{NewURL}}/api/login",
+					"host": [
+						"{{NewURL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": " \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9xYS50YWx0ZWt0Yy5jb20iLCJhdWQiOiJUSEVfQVVESUVOQ0UiLCJpYXQiOjE2NDA3NjEwNzgsIm5iZiI6MTY0MDc2MTA4OCwiZXhwIjoxNjQwODQ3NDc4LCJpc19hZG1pbiI6ZmFsc2UsImRhdGEiOnsiaWQiOiIxMTAiLCJmaXJzdF9uYW1lIjoiQm9rc2hpIiwibGFzdF9uYW1lIjoiTXVubmEiLCJlbWFpbCI6ImJva3NoaTAxQGdtYWlsLmNvbSIsInN0dWRlbnRJZCI6IlRUQ2xtYVVMIn19.0E-HrFJ6ARWvIm5pbNzOMpl2lX9ACgJsIwxQLYo8FOU\"",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Bokshii\",\r\n    \"lastName\" : \"Munnaa\",\r\n    \"email\"     : \"bokshi01@gmail.com\",\r\n    \"password\"  : \"1234567\",\r\n    \"confirmPassword\"  : \"1234567\",\r\n    \"dob\"       : {\r\n        \"year\"      : 2013,\r\n        \"month\"     : 12,\r\n        \"day\"       : 31\r\n    },\r\n    \"gender\"    : \"male\",\r\n    \"agree\"     : true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{NewURL}}/api/student/{{student_id}}",
+					"host": [
+						"{{NewURL}}"
+					],
+					"path": [
+						"api",
+						"student",
+						"{{student_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
